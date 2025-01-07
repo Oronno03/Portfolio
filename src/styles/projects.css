@@ -1,0 +1,171 @@
+.projects-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  margin-top: 3rem;
+}
+
+.project-card-wrapper {
+  display: flex;
+  flex: 1 1 20vw;
+  border-radius: 2rem;
+  padding: 1px;
+  max-width: 500px;
+}
+
+.project-card {
+  min-width: 400px;
+  flex: 1 1 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  background: var(--second-bg-color);
+  text-align: center;
+}
+
+.project-title {
+  font-size: 3rem;
+}
+
+.project-description {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 2;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 2%;
+  height: 100%;
+}
+
+.project-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.project-link {
+  font-size: 3rem;
+  color: var(--main-color);
+}
+
+.project-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  color: gray;
+  justify-content: center;
+}
+
+.project-category {
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.3rem;
+}
+
+@media (max-width: 1024px) {
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    min-width: 0;
+    width: 80vw;
+    padding: 1rem;
+  }
+
+  .project-card img {
+    width: 100%;
+  }
+
+  .project-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .project-link {
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .project-categories {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .project-category {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .project-card {
+    width: 90%;
+    padding: 2rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-link {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .project-categories {
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .project-category {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90vw;
+  }
+
+  .project-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-link {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .project-categories {
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .project-category {
+    font-size: 1.5rem;
+  }
+}
