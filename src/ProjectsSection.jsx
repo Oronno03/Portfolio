@@ -1,5 +1,5 @@
-import pycreations from "./assets/Project 1.png";
-import spacexapi from "./assets/Project 2.png";
+import pycreations from "./assets/pycreation.png";
+import spacexapi from "./assets/spacex.png";
 import statuscycler from "./assets/statuscycler.png";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";

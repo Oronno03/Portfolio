@@ -25,7 +25,7 @@ const AboutSection = () => {
         >
           <h3>I am Intiser Zaman (Oronno)</h3>
           <p>
-            I am a 9th Grade student who is passionate about programming and
+            I am a 10th Grade student who is passionate about programming and
             technology living in Bangladesh. I am always looking for new
             challenges and experiences. I am interested in both frontend and
             backend development and have a good understanding of the latest
