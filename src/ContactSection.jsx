@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer, textVariant } from "./motion";
+import { toast, Bounce, ToastContainer } from "react-toastify";
 import "./styles/contact.css";
 
 const contactDetails = [
@@ -34,8 +35,6 @@ const ContactSection = () => {
 
   const [formValues, setFormValues] = useState(formInitialValues);
   const [buttonText, setButtonText] = useState("Send");
-  const [feedbackMessage, setFeedbackMessage] = useState("");
-  const [feedbackColor, setFeedbackColor] = useState("");
   const [captchaVerified, setCaptchaVerified] = useState(false);
 
   const handleCaptchaChange = (value) => {
@@ -45,8 +44,19 @@ const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!captchaVerified) {
-      setFeedbackMessage("Please verify that you are not a robot.");
-      setFeedbackColor("red");
+      toast.error("Please verify the captcha", {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        progress: 0,
+        theme: "dark",
+        transition: Bounce,
+        style: {
+          fontSize: "2rem",
+        },
+      });
     } else {
       setButtonText("Sending...");
 
@@ -69,24 +79,41 @@ const ContactSection = () => {
           () => {
             setButtonText("Send");
             setFormValues(formInitialValues);
-            setFeedbackMessage(
-              "Thanks for reaching me out! I will contact you asap!"
+            toast.success(
+              "Thanks for reaching me out! I will contact you asap!",
+              {
+                position: "bottom-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                draggable: true,
+                progress: 0,
+                theme: "dark",
+                transition: Bounce,
+                style: {
+                  fontSize: "2rem",
+                },
+              }
             );
-            setFeedbackColor("white");
           },
           () => {
             setButtonText("Send");
-            setFeedbackMessage(
-              "Failed to send message. Please try again later."
-            );
-            setFeedbackColor("red");
+            toast.error("Failed to send message. Please try again later.", {
+              position: "bottom-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              draggable: true,
+              progress: 0,
+              theme: "dark",
+              transition: Bounce,
+              style: {
+                fontSize: "2rem",
+              },
+            });
           }
         );
     }
-
-    setTimeout(() => {
-      setFeedbackMessage("");
-    }, 10000);
   };
 
   return (
@@ -231,18 +258,6 @@ const ContactSection = () => {
               </button>
             </motion.div>
           </form>
-          {feedbackMessage && (
-            <p
-              style={{
-                color: feedbackColor,
-                fontSize: "3rem",
-                textAlign: "center",
-                marginTop: "1rem",
-              }}
-            >
-              {feedbackMessage}
-            </p>
-          )}
         </div>
         <div className="contact-info">
           {contactDetails.map((contact, index) => (
@@ -263,6 +278,7 @@ const ContactSection = () => {
           ))}
         </div>
       </div>
+      <ToastContainer />
     </motion.section>
   );
 };
