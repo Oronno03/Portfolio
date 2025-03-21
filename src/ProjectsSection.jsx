@@ -1,6 +1,7 @@
 import pycreations from "./assets/pycreation.png";
 import spacexapi from "./assets/spacex.png";
 import statuscycler from "./assets/statuscycler.png";
+import iftardaan from "./assets/iftardaan.png";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer, textVariant } from "./motion";
@@ -28,6 +29,13 @@ const projects = [
     image: `${statuscycler}`,
     sourceCode: "https://github.com/Oronno03/Discord-Status-Cycler",
     categories: ["Python", "Automation", "Discord"],
+  },
+  {
+    title: "Iftar Daan",
+    description: "A website made for a group of students donating iftaar",
+    image: `${iftardaan}`,
+    sourceCode: "https://github.com/Oronno03/iftardaan",
+    categories: ["Web Dev", "React"],
   },
 ];
 
